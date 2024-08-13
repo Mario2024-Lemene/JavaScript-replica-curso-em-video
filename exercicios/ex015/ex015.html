@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Analisando data e hora do sistema</h1>
+    <input type="button" value="Iniciar Análise">
+    <section>
+        <p>Aqui vai aparecer algo...</p>
+    </section>
+    <script>
+        function hora(){
+            const data = new Date()
+            const dia = data.getDate()
+            const mes = data.getMonth()
+            const ano = data.getFullYear()
+            const semana = data.getDay()
+            const hora = data.getHours()
+            const min = data.getMinutes()
+            const seg = data.getSeconds()
+            const meses = ["Jan", "Fev", "Mar", "Abril", "May", "Jun", "Julh", "Ago", "Set", "Oct", "Nov", "Dec"]
+            const dias =["Domingo", "Segunda", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-feira", "Sabado"]
+            resp.innerHTML = `<p>Dia: <mark>${dia}</mark></p>`
+            resp.innerHTML += `<p>Mês: <mark>${meses[mes]}</mark></p>`
+            resp.innerHTML += `<p>Ano: <mark>${ano}</mark></p>`
+            resp.innerHTML += `<p>Dia da semana: <mark>${dias[semana]}</mark></p>`
+            resp.innerHTML += `<p>Hora: <mark>${hora}</mark></p>`
+            resp.innerHTML += `<p>Minutos: <mark>${min}</mark></p>`
+            resp.innerHTML += `<p>Segundos: <mark>${seg}</mark></p>`
+        }
+        const bt = document.querySelector("input")
+        const resp = document.querySelector("section")
+        bt.addEventListener("click", ()=>{
+            setInterval(hora, 0)
+        })
+    </script>
+</body>
+</html>

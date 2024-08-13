@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Aula 11 de JavaScript</title>
+</head>
+<body>
+    <h1>Média do aluno v2.0</h1>
+    <p>
+        <input type="button" value="Calcular média">
+    </p>
+    <section id="resultados">
+        <p>O resultado vai aparecer aqui...</p>
+    </section>
+    <script>
+        const bt = document.querySelector("input")
+        const resp = document.querySelector("#resultados")
+        bt.addEventListener("click", ()=>{
+            const nome = prompt("Qual é o nome do aluno?")
+            const nota1 = Number(prompt(`Qual foi a primeira nota de ${nome}`))
+            const nota2 = Number(prompt(`Além de ${nota1}, qual foi a outra nota de ${nome}`))
+            const media = (nota1+nota2)/2
+            const mensg = media>6? "Meus parabéns": "Estude mais um pouco"
+            resp.innerHTML = `<p>Calculando a média final de <mark>${nome}</mark></p>`
+            resp.innerHTML += `<p>As notas obtidas foram <mark>${nota1} e ${nota2}</mark>.</p>`
+            resp.innerHTML += `A média final será <mark>${media}</mark>.`
+            resp.innerHTML += `<p>A mensagem que temos é: <strong style="color:red">${mensg} </strong></p>`
+        })
+    </script>
+</body>
+</html>

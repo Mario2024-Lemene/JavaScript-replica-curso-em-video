@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Trabalhando com números</h1>
+    <input type="button" value="Clique para calcular" id="botao">
+    <p>O resultado vem aqui...</p>
+    <script>
+        const bt1 = document.querySelector("#botao")
+        const resp = document.querySelector("p")
+        bt1.addEventListener("click", ()=>{
+            const num = Number(prompt("Digite um número:"))
+            const dobro = num*2
+            const metade = num/2
+            resp.innerHTML = `<p>O bobro de ${num} é ${dobro} e a metade é ${metade} </p>`
+        })
+    </script>
+</body>
+</html>

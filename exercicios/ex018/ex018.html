@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 18 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .oculta{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tente adivinhar meu número</h1>
+    <p>
+        <input type="button" value="Tentar adivinhar" id="btAdivinha">
+    </p>
+    <section>
+        <p>Já pensei em um valor entre 1 e 100...</p>
+    </section>
+    <script>
+        const btadvi = document.querySelector("#btAdivinha")
+        const resp = document.querySelector("section")
+        const sort = Math.round(Math.random()*100)
+        console.log(sort)
+        btadvi.addEventListener("click", ()=>{
+            const num = Number(prompt("Qual é o seu palpite?"))
+            const dica = num > sort? "MENOR" : "MAIOR"
+            if(sort == num){
+                resp.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${sort}</p>`
+                btadvi.className = "oculta"
+            }else{
+                resp.innerHTML += `<p>Você falou ${num}. Meu número é <strong>${dica}</strong></p>`
+            }
+        })
+    </script>
+</body>
+</html>

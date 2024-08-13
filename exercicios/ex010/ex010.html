@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>JavaScript Externo</h1>
+    <p>
+        <input type="button" value="Ação 1" id="botao1">
+        <input type="button" value="Ação 2" id="botao2">
+        <input type="button" value="Ação 3" id="botao3">
+        <input type="button" value="Ação 4" id="botao4">
+    </p>
+    <p>Aqui vou registar suas ações com os botões acima</p>
+    <section id="repostas">
+        
+    </section>
+    <script>
+        const bt1 = document.querySelector("#botao1")
+        const bt2 = document.querySelector("#botao2")
+        const bt3 = document.querySelector("#botao3")
+        const bt4 = document.querySelector("#botao4")
+        const resp = document.querySelector("section#repostas")
+        bt1.addEventListener("click", ()=>{
+            resp.innerHTML += `<p>Clicou no primeiro botão</p>`
+        })
+        bt2.addEventListener("click", ()=>{
+            resp.innerHTML += `<p>Clicou no segundo botão</p>`
+        })
+        bt3.addEventListener("click", ()=>{
+            resp.innerHTML += `<p>Clicou no terceiro botão</p>`
+        })
+        bt4.addEventListener("click", ()=>{
+            resp.innerHTML += `<p>Clicou no quarto botão</p>`
+        })
+    </script>
+</body>
+</html>

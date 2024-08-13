@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Aula 12 de JavaScript</title>
+</head>
+<body>
+    <h1>É par ou é ímpar?</h1>
+    <input type="button" value="Clique para iniciar">
+    <p>O resultado vai aparecer aqui...</p>
+    <script>
+        const bt = document.querySelector("input")
+        const resp = document.querySelector("p")
+        bt.addEventListener("click", ()=>{
+            const num =  Number(prompt("Digite um número: "))
+            resp.innerHTML = num % 2 ? `O número ${num} que foi digitado é <strong>ÍMPAR</strong>! `: `O número ${num} que foi digitado é <strong>PAR</strong>!`
+        })
+    </script>
+</body>
+</html>

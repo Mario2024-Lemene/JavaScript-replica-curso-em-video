@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 19 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Múltiplas ações</h1>
+    <p>
+        <input type="button" value="Clique para Iniciar">
+    </p>
+    <section id="reposta">
+        <p>Clique no botão acima para começar.</p>
+    </section>
+    <script>
+        const bt = document.querySelector("input")
+        let resp = document.querySelector("#reposta")
+        bt.addEventListener("click", () => {
+            const num1 = Number(prompt("Primeiro valor:"))
+            const num2 = Number(prompt("Segundo valor:"))
+            const escolha = Number(prompt(`Valores informado ${num1} e ${num2}\nO que vamos fazer?\n[1] Somar\n[2] Substrair\n[3] Multiplicar\n[4] Dividir`))
+            let valor = 0
+            resp.innerHTML = `<h2>Calculando...</h2>`
+            switch (escolha) {
+                case 1:
+                    valor = num1 + num2
+                    resp.innerHTML += `<p>${num1} + ${num2} = <strong>${valor}</strong></p>`
+                    break
+                case 2:
+                    valor = num1 - num2
+                    resp.innerHTML += `<p>${num1} - ${num2} = <strong>${valor}</strong></p>`
+                    break
+                case 3:
+                    valor = num1 * num2
+                    resp.innerHTML += `<p>${num1} * ${num2} = <strong>${valor}</strong></p>`
+                    break
+                case 4:
+                    valor = num1/num2
+                    resp.innerHTML += `<p>${num1} / ${num2} = <strong>${valor.toFixed(2)}</strong></p>`
+                    break
+                default:
+                    resp.innerHTML += `<p>OPÇÃO INVÁLIDA! Você digitou ${num1} e ${num2}, mas não sei o que fazer com eles.</p>`
+                break
+            }
+          
+        })
+    </script>
+</body>
+
+</html>

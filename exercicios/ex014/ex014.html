@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Interagindo com o sistema</h1>
+    <input type="button" value="Clique em mim">
+    <p>Aqui vai aparecer algo...</p>
+    <script>
+        const bt = window.document.querySelector("input")
+        const resp = window.document.querySelector("p")
+        bt.addEventListener("click",()=>{
+            const data = new Date()
+            resp.innerHTML = `<p>O que eu recebi do sistema foi <mark>${data}</mark> </p>`
+        })
+        
+    </script>
+</body>
+</html>

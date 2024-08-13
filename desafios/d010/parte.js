@@ -1,0 +1,1 @@
+const bt = document.querySelector("#botao")

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7 JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Média do aluno v1.0</h1>
+    <input type="button" value="Calcular média" id="botao">
+    <p id="resposta1">O resultado vai aparecer aqui...</p>
+    <p id="resposta2"></p>
+    <p id="resposta3"></p>
+    <script>
+        const bt1 = document.querySelector("#botao")
+        const resp1 = document.querySelector("#resposta1")
+        const resp2 = document.querySelector("#resposta2")
+        const resp3 = document.querySelector("#resposta3")
+        bt1.addEventListener("click", ()=>{
+            const nome = prompt("Qual é o nome do aluno?")
+            const nota1 = Number(prompt(`Qual foi a primeria nota de ${nome}`))
+            const nota2 = Number(prompt(`Além de ${nota1}, qual foi a outra nota de ${nome}?`))
+            const media = (nota1+nota2)/2
+            resp1.innerHTML = `<p>Calculando a média final de <mark>${nome}</mark>.</p>`
+            resp2.innerHTML = `<p>As notas obtidas forma <mark>${nota1} e ${nota2}</mark>.</p>`
+            resp3.innerHTML = `A média final será <mark>${media.toFixed(2)}</mark>`
+        })
+    </script>
+</body>
+</html>

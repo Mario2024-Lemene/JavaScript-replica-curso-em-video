@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Aula 23 de JavaScript</title>
+</head>
+<body>
+    <h1>Contando de 1 a 10 (mostrando só os pares)</h1>
+    <p>
+        <input type="button" value="Contar de 1 a 10">
+    </p>
+    <p>Aperte o botão acima para contar</p>
+    <section>
+
+    </section>
+    <script>
+        const bt = document.querySelector("input")
+        const resp = document.querySelector("section")
+        bt.addEventListener("click", ()=>{
+            resp.innerHTML = `<h2>Números pares de 1 até 10</h2>`
+            let num = ""
+            for(let i = 1; i<=10; i++){
+                if(i%2==0){
+                    num += `${i} &#x1F449; `
+                }
+            }
+            resp.innerHTML += `<p>${num} &#x1F3C1;</p>`
+        })
+    </script>
+</body>
+</html>

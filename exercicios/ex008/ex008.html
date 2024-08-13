@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 8 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Vários cálculos em JS</h1>
+    <input type="button" value="Clique para calcular" id="botao1">
+    <section id="repostas">
+        <p>O resultavo vai aparecer aqui...</p>
+    </section>
+    <script>
+        const bt = document.querySelector("#botao1")
+        const resp = document.querySelector("#repostas")
+        bt.addEventListener("click", ()=>{
+            const num = Number(prompt("Digite um número"))
+            resp.innerHTML = `<p>O número a ser analizado aqui sera o <strong>${num}</strong> </p><hr>`
+            resp.innerHTML += `<p>O seu valor absoluto é ${Math.abs(num)}</p>`
+            resp.innerHTML += `<p>A sua parte inteira é ${Math.trunc(num)}</p>`
+            resp.innerHTML += `<p>A sua raiz quadrada é ${Math.sqrt(num).toFixed(3)} </p>`
+            resp.innerHTML += `<p>A sua raiz cúbica é ${Math.cbrt(num).toFixed(3)}</p>`
+            resp.innerHTML += `<p>O valor de ${num}<sup>2</sup> é ${Math.pow(num,2)} </p>`
+            resp.innerHTML += `<p>O valor de ${num}<sup>3</sup> é ${Math.pow(num,3)} </p>`
+        })
+    </script>
+</body>
+</html>

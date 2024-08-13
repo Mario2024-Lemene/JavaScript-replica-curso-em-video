@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Aula 24 de JavaScript</title>
+</head>
+<body>
+    <h1>Contagem regressiva de 10 a 1</h1>
+    <p>
+        <input type="button" value="Contar de 10 a 1">
+    </p>
+    <p>Aperte o botão acima para contar</p>
+    <section>
+
+    </section>
+    
+    <script>
+        const bt = document.querySelector("input")
+        const resp = document.querySelector("section")
+        bt.addEventListener("click", ()=>{
+            resp.innerHTML = `<h2>Contagem Regressiva de 10 a 1</h2>`
+            let num = ""
+            for(let i = 10; i>=1; i--){
+                num += `${i} &#x1F449; `
+            }
+            resp.innerHTML += `<p>${num} &#x1F3C1;</p>`
+        })
+    </script>
+</body>
+
+</html>

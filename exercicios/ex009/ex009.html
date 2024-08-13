@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 9 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <h1>Contador de cliques</h1>
+    <p>
+        <input type="button" value="Clique em mim" id="btAumenta">
+        <input type="button" value="Zerar o contador" id="btZerar">
+    </p>
+    <p>O contador está com <mark><span>0</span></mark> cliques.</p>
+    <script>
+        const bt1 = document.querySelector("#btAumenta")
+        const bt2 = document.querySelector("#btZerar")
+        const resp = document.querySelector("span")
+        let num = 0
+        bt1.addEventListener("click", ()=>{
+            num += 1
+            resp.innerHTML = num
+        })
+        bt2.addEventListener("click", ()=>{
+            num = 0
+            resp.innerHTML = num
+        })
+    </script>
+</body>
+
+</html>

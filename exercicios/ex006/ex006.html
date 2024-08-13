@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 de JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    
+    <input type="button" value="Iniciar a soma" id="botao1">
+    <p>O resultado vem aqui...</p>
+    <script>
+        const bt1 = document.querySelector("#botao1")
+        const resp = document.querySelector("p")
+        bt1.addEventListener("click", ()=>{
+            const num1 = Number(prompt("Digite um número: "))
+            const num2 = Number(prompt("Digite outro número:"))
+            const soma = num1 + num2
+            resp.innerHTML =`<p>A soma entre <mark>${num1}</mark> e <mark>${num2}</mark> é igual a <strong>${soma}</strong> </p>`
+        })
+    </script>
+</body>
+</html>

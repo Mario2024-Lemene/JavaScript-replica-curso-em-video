@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Aula 20 de JavaScript</title>
+</head>
+
+<body>
+    <h1>Descubra a estação do ano</h1>
+    <p>
+        <input type="button" value="Informe o mês aqui">
+    </p>
+    <section>
+        <p>Clique no botão acima para informar o mês.</p>
+    </section>
+    <script>
+        const bt = document.querySelector("input")
+        const resp = document.querySelector("section")
+        bt.addEventListener("click", () => {
+            const mes = prompt("Digite o mês em extenso (ex: Setembro)")
+            let estacao  = ""
+            switch (mes.toUpperCase()) {
+                case "JANEIRO": case "FEVEREIRO": case "MARÇO":
+                    estacao = 'INVERNO'
+                    break
+                case 'ABRIL': case 'MAIO': case 'JUNHO':
+                    estacao = 'PRIMAVERA'
+                    break
+                case 'JULHO': case 'AGOSTO': case 'SETEMBRO':
+                    estacao = 'VERÃO'
+                    break
+                case 'OUTUBRO': case 'NOVEMBRO': case 'DEZEMBRO':
+                    estacao = 'OUTONO'
+                default:
+                    break
+                    estacao = 'INDEFINIDA'
+                    break
+            }
+            resp.innerHTML = `<p>No mês de <mark>${mes}</mark>, estamos na estação <mark><strong>${estacao}</strong></mark></p>`
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Aula 16 de JavaScript</title>
+</head>
+<body>
+    <h1>Calculando a idade</h1>
+    <input type="button" value="iniciar">
+    <p>Aqui vai aparecer algo...</p>
+    <script>
+        const resp = document.querySelector("p")
+        const bt = document.querySelector("input")
+        bt.addEventListener("click",()=>{
+            const data = new Date()
+            const inAno = Number(prompt("Em que ano você nasceu?"))
+            const ano = data.getFullYear()
+            const idade = ano - inAno
+            resp.innerHTML = `<p>Quem nasceu em ${inAno} vai completar <strong>${idade}</strong> anos em ${ano}.</p>`
+        })
+    </script>
+</body>
+</html>
